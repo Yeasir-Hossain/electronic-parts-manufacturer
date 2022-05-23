@@ -1,15 +1,29 @@
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { Routes, Route } from "react-router-dom";
+import Header from './pages/shared/Header';
+import Footer from './pages/shared/Footer';
+import Home from './pages/home/Home';
+import Aboutus from './pages/About/Aboutus';
+import Login from './pages/Authentication/Login';
+import SignUp from './pages/Authentication/SignUp';
+import ContactUs from './pages/ContactUs/ContactUs';
+import Blog from './pages/Blog/Blog';
+import Portfolio from './pages/Portfolio/Portfolio';
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <button class="btn">Button</button>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn btn-secondary">Button</button>
-      <button class="btn btn-accent">Button</button>
-      <button class="btn btn-ghost">Button</button>
-      <button class="btn btn-link">Button</button>
+      <Header></Header>
+      <Routes> 
+        <Route path='/' element={<Home></Home>} />
+        <Route path='about' element={<Aboutus></Aboutus>} />
+        <Route path='contact' element={<ContactUs></ContactUs>} />
+        <Route path='blog' element={<Blog></Blog>} />
+        <Route path='portfolio' element={<Portfolio></Portfolio>} />
+        <Route path='login' element={<Login></Login>} />
+        <Route path='SignUp' element={<SignUp></SignUp>} /></Routes>
+      <Footer></Footer>
     </div>
   );
 }
