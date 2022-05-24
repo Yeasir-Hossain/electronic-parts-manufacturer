@@ -7,23 +7,35 @@ import Home from './pages/home/Home';
 import Aboutus from './pages/About/Aboutus';
 import Login from './pages/Authentication/Login';
 import SignUp from './pages/Authentication/SignUp';
-import ContactUs from './pages/ContactUs/ContactUs';
 import Blog from './pages/Blog/Blog';
 import Portfolio from './pages/Portfolio/Portfolio';
+import { ToastContainer } from 'react-toastify';
+import Dashboard from './pages/Dashboard/Dashboard';
+import RequireAuth from './pages/Authentication/RequireAuth';
+import Resource from './pages/Resource/Resource';
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Routes> 
+      <Routes>
         <Route path='/' element={<Home></Home>} />
         <Route path='about' element={<Aboutus></Aboutus>} />
-        <Route path='contact' element={<ContactUs></ContactUs>} />
         <Route path='blog' element={<Blog></Blog>} />
         <Route path='portfolio' element={<Portfolio></Portfolio>} />
         <Route path='login' element={<Login></Login>} />
-        <Route path='SignUp' element={<SignUp></SignUp>} /></Routes>
+        <Route path='signup' element={<SignUp></SignUp>} />
+        <Route path='dashboard' element={
+        <RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>}  />
+        <Route path='resource' element={
+        <RequireAuth>
+          <Resource></Resource>
+        </RequireAuth>}  />
+      </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

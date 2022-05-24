@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Multi Meter",
+      "img" : "https://ibb.co/NKcJZRR",
+      "description" : "A multimeter is a measuring instrument that can measure multiple electrical properties. A typical multimeter can measure voltage, resistance, and current, in which case it is also known as a volt-ohm-milliammeter (VOM)",
+      "price":150,
+      "quantity":1000,
+      "minquantity": 50 
+    },
+    {
+      "name": "Bosch GSB 500W Drill",
+      "img" : "https://ibb.co/CMZfS38",
+      "description" : "A drill is a tool used for making round holes or driving fasteners. It is fitted with a bit, either a drill or driverchuck. with hand-operated types dramatically decreasing in popularity and cordless battery-powered ones proliferating.",
+      "price":200,
+      "quantity":1500,
+      "minquantity": 25 
+    },
+    {
+      "name": "TOLSEN Combination Pliers (8 inch/200mm)",
+      "img" : "https://ibb.co/8cyQcP7",
+      "description" : "Pliers are a hand tool used to hold objects firmly, possibly developed from tongs used to handle hot metal in Bronze Age Europe.[1] They are also useful for bending and physically compressing a wide range of materials.",
+      "price":50,
+      "quantity":3000,
+      "minquantity": 100 
+    },
+    {
+      "name": "Visko 111 Screw Driver",
+      "img" : "https://ibb.co/tHFrhMM",
+      "description" : "A screwdriver is a tool, manual or powered, used for driving screws. A typical simple screwdriver has a handle and a shaft, ending in a tip the user puts into the screw head before turning the handle.",
+      "price":150,
+      "quantity":1000,
+      "minquantity": 50 
+    }
+  ]

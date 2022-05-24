@@ -1,11 +1,14 @@
 import React from 'react';
 import Banner from './Banner';
+import Flip from 'react-reveal/Flip';
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
-        </div>
+        <Flip left>
+          <Banner></Banner>
+        </Flip>
+      </div>
     );
 };
 
