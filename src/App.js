@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import Dashboard from './pages/Dashboard/Dashboard';
 import RequireAuth from './pages/Authentication/RequireAuth';
 import Resource from './pages/Resource/Resource';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <RequireAuth>
           <Resource></Resource>
         </RequireAuth>}  />
+        <Route path='*' element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
