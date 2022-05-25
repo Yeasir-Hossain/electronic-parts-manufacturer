@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
@@ -6,6 +6,7 @@ import Loading from '../shared/Loading';
 import google from '../../assets/icons/google.png'
 import auth from '../../firebase.init';
 import Slide from 'react-reveal/Slide';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -20,13 +21,13 @@ const Login = () => {
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
-    // const [token] = useToken( user ||gUser);
+    const [token] = useToken( user ||gUser);
     let from = location.state?.from?.pathname || "/";
-    // useEffect( () =>{
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token , from, navigate])
+    useEffect( () =>{
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token , from, navigate])
 
 
     if (loading || gLoading) {

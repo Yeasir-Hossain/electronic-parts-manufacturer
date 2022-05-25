@@ -6,6 +6,7 @@ import Loading from '../shared/Loading';
 import google from '../../assets/icons/google.png'
 import auth from '../../firebase.init';
 import Slide from 'react-reveal/Slide';
+import useToken from '../../hooks/useToken';
 
 
 const SignUp = () => {
@@ -18,7 +19,7 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
-    // const [token] = useToken( user ||gUser);
+    const [token] = useToken( user ||gUser);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     let signInError;
@@ -31,9 +32,9 @@ const SignUp = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-    // if (token) {
-    //     navigate('/purchase')
-    // }
+    if (token) {
+        navigate('/purchase')
+    }
 
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
