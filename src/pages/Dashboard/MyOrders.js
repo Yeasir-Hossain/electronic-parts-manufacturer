@@ -42,6 +42,7 @@ const MyOrders = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Quantity</th>
+                            <th>Price</th>
                             <th>Payment</th>
                             <th>Delete</th>
                         </tr>
@@ -52,6 +53,7 @@ const MyOrders = () => {
                                 key={index}>
                                 <th>{index + 1}</th>
                                 <td>{o.product}</td>
+                                <td>${o.price}</td>
                                 <td>{o.quantity}</td>
                                 <td>
                                     {(o.status==='') &&  <Link to={`/dashboard/payment/${o._id}`}> <button className='btn btn-sm btn-success'>Pay</button></Link>}

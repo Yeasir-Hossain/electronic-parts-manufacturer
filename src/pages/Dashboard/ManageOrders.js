@@ -43,7 +43,7 @@ const ManageOrders = () => {
     }
     return (
         <div>
-            <h1 className='text-2xl'>My orders: {orders.length}</h1>
+            <h1 className='text-2xl text-center'>My orders: {orders.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
 
@@ -63,6 +63,7 @@ const ManageOrders = () => {
                                 <td>{o.product}</td>
                                 <td>{o.quantity}</td>
                                 <td>
+                                {(o.status === '') && <span className='text-error'>Not Paid</span>}
                                     {(o.status === 'paid') && <button onClick={() => handleShipping(o._id)} className='btn btn-sm btn-success'>Ship</button>}
                                     {(o.status === 'ship') && <span className='text-success'>Shipping</span>}
                                 </td>
