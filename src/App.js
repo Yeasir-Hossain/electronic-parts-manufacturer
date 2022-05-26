@@ -15,6 +15,13 @@ import RequireAuth from './pages/Authentication/RequireAuth';
 import Resource from './pages/Resource/Resource';
 import NotFound from './pages/NotFound/NotFound';
 import Purchase from './pages/Purchase/Purchase';
+import Users from './pages/Dashboard/Users';
+import RequireAdmin from './pages/Authentication/RequireAdmin';
+import AddProduct from './pages/Dashboard/AddProduct';
+import ManageProducts from './pages/Dashboard/ManageProducts';
+import MyOrders from './pages/Dashboard/MyOrders';
+import Payment from './pages/Dashboard/Payment';
+import ManageOrders from './pages/Dashboard/ManageOrders';
 
 function App() {
   return (
@@ -28,21 +35,28 @@ function App() {
         <Route path='login' element={<Login></Login>} />
         <Route path='signup' element={<SignUp></SignUp>} />
         <Route path='dashboard' element={
-        <RequireAuth>
-          <Dashboard></Dashboard>
-        </RequireAuth>}  />
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>}>
+          <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+          <Route path='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+          <Route path='manageProduct' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
+          <Route path='manageOrder' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
+          </Route>
         <Route path='purchase/:id' element={
-        <RequireAuth>
-          <Purchase></Purchase>
-        </RequireAuth>}  />
-        <Route path='purchase ' element={
-        <RequireAuth>
-          <Purchase></Purchase>
-        </RequireAuth>}  />
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>} />
+        <Route path='purchase' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>} />
         <Route path='resource' element={
-        <RequireAuth>
-          <Resource></Resource>
-        </RequireAuth>}  />
+          <RequireAuth>
+            <Resource></Resource>
+          </RequireAuth>} />
         <Route path='*' element={<NotFound></NotFound>} />
       </Routes>
       <Footer></Footer>

@@ -14,7 +14,7 @@ const Purchase = () => {
     const [purchaseQuantity, setPurchaseQuantity] = useState('')
     const [btnDisable, setBtnDisable] = useState(true)
     const [error, setError] = useState("")
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit,reset } = useForm();
     const url = `http://localhost:5000/product/${id}`
     const { data: product, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
@@ -42,7 +42,9 @@ const Purchase = () => {
         const booking = {
             product: name,
             quantity: purchaseQuantity,
-            email: data.email,
+            email: user.email,
+            price:product.price,
+            status:'',
             address: data?.address,
             phone: data?.phone
         }
@@ -71,6 +73,7 @@ const Purchase = () => {
                         .then(data => {
                             if (data.acknowledged) {
                                 toast.success("Order Placed Successsfully")
+                                reset()
                             }
                         })
                 }
