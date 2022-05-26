@@ -39,16 +39,17 @@ const Purchase = () => {
         }
     }
     const onSubmit = (data) => {
+        newQuantity = quantity - purchaseQuantity
+        const price = product.price * quantity
         const booking = {
             product: name,
             quantity: purchaseQuantity,
             email: user.email,
-            price:product.price,
+            price:price,
             status:'',
             address: data?.address,
             phone: data?.phone
         }
-        newQuantity = quantity - purchaseQuantity
         fetch(url, {
             method: "PUT",
             headers: {
