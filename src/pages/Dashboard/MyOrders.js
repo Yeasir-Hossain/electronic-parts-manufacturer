@@ -13,7 +13,7 @@ const MyOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking?email=${email}`, {
+        fetch(`https://stormy-chamber-96171.herokuapp.com/booking?email=${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

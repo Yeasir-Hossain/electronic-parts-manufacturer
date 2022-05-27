@@ -15,7 +15,7 @@ const Purchase = () => {
     const [btnDisable, setBtnDisable] = useState(true)
     const [error, setError] = useState("")
     const { register, handleSubmit, reset } = useForm();
-    const url = `http://localhost:5000/product/${id}`
+    const url = `https://stormy-chamber-96171.herokuapp.com/product/${id}`
     const { data: product, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -62,7 +62,7 @@ const Purchase = () => {
             .then((data) => {
                 if (data.modifiedCount) {
                     refetch()
-                    fetch(`http://localhost:5000/booking`, {
+                    fetch(`https://stormy-chamber-96171.herokuapp.com/booking`, {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",

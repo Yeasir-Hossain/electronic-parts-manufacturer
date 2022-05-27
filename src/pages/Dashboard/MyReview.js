@@ -9,10 +9,10 @@ const MyReview = () => {
 
     const { email } = user
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${email}`)
+        fetch(`https://stormy-chamber-96171.herokuapp.com/reviews?email=${email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
+    }, [email])
     return (
         <Fade left cascade>
             <div className='w-full'>

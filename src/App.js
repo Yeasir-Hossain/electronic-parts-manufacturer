@@ -23,7 +23,6 @@ import MyOrders from './pages/Dashboard/MyOrders';
 import Payment from './pages/Dashboard/Payment';
 import ManageOrders from './pages/Dashboard/ManageOrders';
 import MyProfile from './pages/Dashboard/MyProfile';
-import Review from './pages/home/Review';
 import AddReview from './pages/Dashboard/AddReview';
 import MyReview from './pages/Dashboard/MyReview';
 

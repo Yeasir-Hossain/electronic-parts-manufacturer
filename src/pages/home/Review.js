@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Fade } from 'react-reveal';
 import useReviews from '../../hooks/useReviews';
 
 const Review = () => {
-    const [reviews, setReviews] = useReviews([])
+    const [reviews] = useReviews([])
     return (
         <Fade left cascade>
             <div className='w-full m-5 p-5'>

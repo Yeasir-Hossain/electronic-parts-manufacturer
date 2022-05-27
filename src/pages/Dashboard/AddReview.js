@@ -9,11 +9,10 @@ const AddReview = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        const url = 'http://localhost:5000/reviews';
+        const url = 'https://stormy-chamber-96171.herokuapp.com/reviews';
         fetch(url, {
             method: "POST",
             headers: {
@@ -23,7 +22,6 @@ const AddReview = () => {
         })
             .then((res) => res.json())
             .then((result) => {
-                console.log(result);
                 toast.success('review added successfully', { position: toast.POSITION.TOP_RIGHT })
             });
     };

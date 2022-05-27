@@ -30,7 +30,7 @@ const AddProduct = () => {
                         minquantity: data.minquantity,
                         img: image
                     }
-                    fetch(`http://localhost:5000/product`, {
+                    fetch(`https://stormy-chamber-96171.herokuapp.com/product`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
