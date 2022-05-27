@@ -5,10 +5,10 @@ import Fade from 'react-reveal/Fade';
 import Refund from './Refund';
 import Summary from './Summary';
 import Tools from './Tools';
-import Reviews from './Reviews';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import Review from './Review';
 
 const Home = () => {
   return (
@@ -18,8 +18,8 @@ const Home = () => {
       </Flip>
       <Fade left>
         <Tools></Tools>
-        <Link to={'/resource'}><button class="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-md block mx-auto text-2xl">See all tools<FontAwesomeIcon className='ml-5 text-xl' icon={faArrowRight} /> </button></Link>
-        <Reviews></Reviews>
+        <Link to={'/resource'}><button className="btn btn-ghost btn-xs sm:btn-sm md:btn-md lg:btn-md block mx-auto text-2xl">See all tools<FontAwesomeIcon className='ml-5 text-xl' icon={faArrowRight} /> </button></Link>
+        <Review></Review>
         <Refund></Refund>
         <Summary></Summary>
       </Fade>

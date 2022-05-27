@@ -44,19 +44,19 @@ const SignUp = () => {
     return (
         <div>
             <Slide right>
-                <div class="bg-no-repeat bg-cover bg-center relative bg-[url('/src/assets/images/bg.png')]"><div class="absolute bg-gradient-to-b from-amber-500 to-black opacity-75 inset-0 z-0"></div>
-                    <div class="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
-                        <div class="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
-                            <div class="self-start hidden lg:flex flex-col  text-white">
-                                <img src="" class="mb-3" alt='' />
-                                <h1 class="mb-3 font-bold text-5xl">Hi 👋 Welcome  to Electronics Lab </h1>
-                                <p class="pr-3">Please Sign up to order products from our page</p>
+                <div className="bg-no-repeat bg-cover bg-center relative bg-[url('/src/assets/images/bg.png')]"><div className="absolute bg-gradient-to-b from-amber-500 to-black opacity-75 inset-0 z-0"></div>
+                    <div className="min-h-screen sm:flex sm:flex-row mx-0 justify-center">
+                        <div className="flex-col flex  self-center p-10 sm:max-w-5xl xl:max-w-2xl  z-10">
+                            <div className="self-start hidden lg:flex flex-col  text-white">
+                                <img src="" className="mb-3" alt='' />
+                                <h1 className="mb-3 font-bold text-5xl">Hi 👋 Welcome  to Electronics Lab </h1>
+                                <p className="pr-3">Please Sign up to order products from our page</p>
                             </div>
                         </div>
-                        <div class="flex justify-center self-center  z-10">
-                            <div class="p-12 bg-transparent mx-auto rounded-2xl w-100 ">
-                                <div class="mb-4">
-                                    <h3 class="font-semibold text-2xl ">Sign Up</h3>
+                        <div className="flex justify-center self-center  z-10">
+                            <div className="p-12 bg-transparent mx-auto rounded-2xl w-100 ">
+                                <div className="mb-4">
+                                    <h3 className="font-semibold text-2xl ">Sign Up</h3>
                                 </div>
                                 <form onSubmit={handleSubmit(onSubmit)}>
 

@@ -62,7 +62,6 @@ const CheckoutForm = ({ order }) => {
         }
         else {
             setCardError('')
-            console.log(paymentIntent);
             setTransactionID(paymentIntent.id)
             setSuccess('Your payment is completed')
             const payment = {

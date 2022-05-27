@@ -13,7 +13,7 @@ const Resource = () => {
         return <Loading></Loading>
     }
     return (
-        <div class="bg-no-repeat bg-cover bg-center bg-[url('/src/assets/images/bg.png')]">
+        <div className="bg-no-repeat bg-cover bg-center bg-[url('/src/assets/images/bg.png')]">
             <Fade right>
                 <h1 className='text-3xl text-center'>TOOLS</h1>
                 <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 justify-items-center p-12'>

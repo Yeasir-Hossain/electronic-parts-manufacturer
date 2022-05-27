@@ -90,22 +90,22 @@ const Purchase = () => {
             <h1 className="text-3xl text-center">Purchase</h1>
             <Fade left>
                 <div className="bg-no-repeat bg-cover bg-center bg-[url('/src/assets/images/bg.png')]">
-                    <div class="hero min-h-screen mx-auto">
-                        <div class="hero-content flex-col lg:flex-row">
+                    <div className="hero min-h-screen mx-auto">
+                        <div className="hero-content flex-col lg:flex-row">
                             <img className='w-[600px] rounded' src={img} alt='' />
                             <div>
-                                <h1 class="text-5xl font-bold">{name}</h1>
-                                <p class="py-6">Description:{description}</p>
+                                <h1 className="text-5xl font-bold">{name}</h1>
+                                <p className="py-6">Description:{description}</p>
                                 <p>Price:{price}</p>
                                 <p>Available:{quantity}</p>
                                 <p>Minimum Quantity for order:{minquantity}</p>
-                                <div class="bg-transparent mx-auto rounded-2xl w-100 ">
+                                <div className="bg-transparent mx-auto rounded-2xl w-100 ">
                                     <form onSubmit={handleSubmit(onSubmit)}>
                                         <div className="form-control w-full max-w-xs">
                                             <label className="label">
                                                 <span className="label-text">Quantity</span>
                                             </label>
-                                            <input type="number" placeholder='Quantity' onInput={handleButton} onKeyUpCapture={handleButton} onKeyDownCapture={handleButton} class="input input-bordered w-full max-w-xs" />
+                                            <input type="number" placeholder='Quantity' onInput={handleButton} onKeyUpCapture={handleButton} onKeyDownCapture={handleButton} className="input input-bordered w-full max-w-xs" />
                                             <span className='text-red-500 text-sm'>{error}</span>
                                             <label className="label">
                                                 <span className="label-text">Email</span>

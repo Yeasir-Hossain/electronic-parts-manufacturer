@@ -38,13 +38,11 @@ const ManageOrders = () => {
                 "content-type": "application/json",
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify(),
-        }).then(res => res.json().then(data => {
-        }))
+        }).then(res => res.json().then(data => {}))
     }
     return (
         <div>
-            <h1 className='text-2xl text-center'>My orders: {orders.length}</h1>
+            <h1 className='text-2xl text-center'>Total orders: {orders.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
 
@@ -72,7 +70,7 @@ const ManageOrders = () => {
                                     {(o.status === 'ship') && <span className='text-success'>Shipping</span>}
                                 </td>
                                 <td>
-                                {(o.status==='') &&  <label onClick={()=>setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Delete</label>}
+                                {(o.status==='') &&  <label onClick={()=>setDeletingProduct(o)} for="delete-order-modal" className="btn btn-error btn-sm">Delete</label>}
                                 </td>
                             </tr>)
                         }

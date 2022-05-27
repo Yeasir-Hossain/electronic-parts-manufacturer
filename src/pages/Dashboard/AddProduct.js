@@ -180,7 +180,7 @@ const AddProduct = () => {
 
                     }
                 </div>
-                <input className='btn w-full max-w-xs ' type="submit" value="Add" />
+                <input className='btn w-full max-w-xs mt-5' type="submit" value="Add" />
             </form >
         </div >
     );

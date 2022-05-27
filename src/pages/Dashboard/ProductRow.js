@@ -24,7 +24,7 @@ const Productrow = ({ product, index, setDeletingProduct }) => {
                 {quantity}
             </td>
             <td>
-                <label onClick={() => setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label>
+                <label onClick={() => setDeletingProduct(product)} htmlFor="delete-confirm-modal" className="btn btn-error btn-xs">Delete</label>
             </td>
         </tr>
     );
