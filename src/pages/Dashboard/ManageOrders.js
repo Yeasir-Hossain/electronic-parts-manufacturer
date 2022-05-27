@@ -51,7 +51,8 @@ const ManageOrders = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Name</th>
+                            <th>Product</th>
+                            <th>Email</th>
                             <th>Quantity</th>
                             <th>Status</th>
                             <th>Delete</th>
@@ -63,6 +64,7 @@ const ManageOrders = () => {
                                 key={index}>
                                 <th>{index + 1}</th>
                                 <td>{o.product}</td>
+                                <td>{o.email}</td>
                                 <td>{o.quantity}</td>
                                 <td>
                                 {(o.status === '') && <span className='text-error'>Not Paid</span>}

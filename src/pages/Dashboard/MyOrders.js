@@ -33,7 +33,7 @@ const MyOrders = () => {
     }, [email, orders, navigate])
     return (
         <div>
-            <h1 className='text-2xl'>My orders: {orders.length}</h1>
+            <h1 className='text-2xl'>Total orders: {orders.length}</h1>
             <div className="overflow-x-auto">
                 <table className="table table-zebra w-full">
 
@@ -41,10 +41,10 @@ const MyOrders = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Quantity</th>
                             <th>Price</th>
+                            <th>Quantity</th>
                             <th>Payment</th>
-                            <th>Delete</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +61,7 @@ const MyOrders = () => {
                                     {(o.status === 'ship') && <span className='text-success'>Shipping</span>}
                                 </td>
                                 <td>
-                                    {(o.status === '') && <label onClick={() => setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Delete</label>}
+                                    {(o.status === '') && <label onClick={() => setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Cancel Order</label>}
                                 </td>
                             </tr>)
                         }

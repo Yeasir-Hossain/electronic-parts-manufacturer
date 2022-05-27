@@ -40,7 +40,7 @@ const Purchase = () => {
     }
     const onSubmit = (data) => {
         newQuantity = quantity - purchaseQuantity
-        const price = product.price * quantity
+        const price = product.price  * purchaseQuantity
         const booking = {
             product: name,
             quantity: purchaseQuantity,

@@ -4,6 +4,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../assets/icons/Logo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightToBracket,faArrowRightFromBracket,faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -20,7 +22,7 @@ const Header = () => {
         {
             user && <li><Link to='/dashboard'>Dashboard</Link></li>
         }
-        <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>}</li>
+        <li>{user ? <button className="btn btn-ghost" onClick={logout} >Sign Out<FontAwesomeIcon className='text-xl' icon={faArrowRightFromBracket} /></button> : <Link to="/login">Login<FontAwesomeIcon className='text-xl' icon={faArrowRightToBracket} /> </Link>}</li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -43,7 +45,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                 user?.photoURL &&   <img className='w-10 h-10 mask mask-squircle' src={user?.photoURL} alt=" " />
+                user?.photoURL ? <img className='w-10 h-10 mask mask-squircle' src={user?.photoURL} alt=" " /> : <FontAwesomeIcon className='text-3xl' icon={faCircleUser} />
                 }
             
                 <label htmlFor="dashboard-sidebar"  tabIndex="1" className="btn btn-ghost lg:hidden">
