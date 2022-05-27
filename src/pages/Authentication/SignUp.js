@@ -19,7 +19,7 @@ const SignUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const navigate = useNavigate();
-    const [token] = useToken( user ||gUser);
+    const [token] = useToken(user || gUser);
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     let signInError;

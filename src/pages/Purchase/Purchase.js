@@ -14,7 +14,7 @@ const Purchase = () => {
     const [purchaseQuantity, setPurchaseQuantity] = useState('')
     const [btnDisable, setBtnDisable] = useState(true)
     const [error, setError] = useState("")
-    const { register, handleSubmit,reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const url = `http://localhost:5000/product/${id}`
     const { data: product, isLoading, refetch } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
@@ -45,8 +45,8 @@ const Purchase = () => {
             product: name,
             quantity: purchaseQuantity,
             email: user.email,
-            price:price,
-            status:'',
+            price: price,
+            status: '',
             address: data?.address,
             phone: data?.phone
         }

@@ -17,13 +17,13 @@ const UserRow = ({ user, index, refetch }) => {
                 return res.json()
             })
             .then(data => {
-               if(data.modifiedCount>0){
-                toast.success(`${email} is now an admin`)
-                refetch()
-               }
+                if (data.modifiedCount > 0) {
+                    toast.success(`${email} is now an admin`)
+                    refetch()
+                }
             })
     }
-    const removeUser = ()=>{
+    const removeUser = () => {
         fetch(`http://localhost:5000/user/${email}`, {
             method: 'DELETE',
             headers: {
@@ -37,10 +37,10 @@ const UserRow = ({ user, index, refetch }) => {
                 return res.json()
             })
             .then(data => {
-               if(data.acknowledged){
-                toast.success(`${email} is deleted`)
-                refetch()
-               }
+                if (data.acknowledged) {
+                    toast.success(`${email} is deleted`)
+                    refetch()
+                }
             })
     }
     return (

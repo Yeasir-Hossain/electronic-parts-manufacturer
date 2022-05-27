@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import DeleteOrderModal from './DeleteOrderModal';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([])
+    const [deletingProduct,setDeletingProduct] = useState(null)
     const [user] = useAuthState(auth)
     const { email } = user
     const navigate = useNavigate()
@@ -38,7 +40,6 @@ const ManageOrders = () => {
             },
             body: JSON.stringify(),
         }).then(res => res.json().then(data => {
-            console.log(data);
         }))
     }
     return (
@@ -52,7 +53,8 @@ const ManageOrders = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Quantity</th>
-                            <th>Payment</th>
+                            <th>Status</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,11 +69,19 @@ const ManageOrders = () => {
                                     {(o.status === 'paid') && <button onClick={() => handleShipping(o._id)} className='btn btn-sm btn-success'>Ship</button>}
                                     {(o.status === 'ship') && <span className='text-success'>Shipping</span>}
                                 </td>
+                                <td>
+                                {(o.status==='') &&  <label onClick={()=>setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Delete</label>}
+                                </td>
                             </tr>)
                         }
                     </tbody>
                 </table>
             </div>
+            {deletingProduct && <DeleteOrderModal
+            deletingProduct={deletingProduct}
+            setDeletingProduct={setDeletingProduct}
+            >
+            </DeleteOrderModal>}
         </div>
     );
 };

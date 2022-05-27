@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
@@ -176,8 +176,8 @@ const AddProduct = () => {
                         {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}</span>}
                     </label>
                     {
-                        addloading  &&  <div  className="w-16 h-16 border-b-2 border-amber-900 rounded-full animate-spin mx-auto"></div>
-                        
+                        addloading && <div className="w-16 h-16 border-b-2 border-amber-900 rounded-full animate-spin mx-auto"></div>
+
                     }
                 </div>
                 <input className='btn w-full max-w-xs ' type="submit" value="Add" />

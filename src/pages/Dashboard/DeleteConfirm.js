@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirm = ({deletingProduct,refetch,setDeletingProduct}) => {
-    const {_id,name} = deletingProduct
+const DeleteConfirm = ({ deletingProduct, refetch, setDeletingProduct }) => {
+    const { _id, name } = deletingProduct
     const handleDelete = () => {
         fetch(`http://localhost:5000/product/${_id}`, {
             method: "DELETE",
@@ -26,7 +26,7 @@ const DeleteConfirm = ({deletingProduct,refetch,setDeletingProduct}) => {
                 <div class="modal-box">
                     <h3 class="font-bold text-lg text-red-500">Are you sure you want to remove {name}?</h3>
                     <div class="modal-action">
-                    <button onClick={()=>handleDelete()} className='btn btn-error'>Yes</button>
+                        <button onClick={() => handleDelete()} className='btn btn-error'>Yes</button>
                         <label for="delete-confirm-modal" class="btn">Cancel</label>
                     </div>
                 </div>

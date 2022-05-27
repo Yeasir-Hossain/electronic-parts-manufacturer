@@ -21,7 +21,6 @@ const CheckoutForm = ({ order }) => {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 if (data?.clientSecret) {
                     setClientSecret(data.clientSecret);
                 }
@@ -66,7 +65,6 @@ const CheckoutForm = ({ order }) => {
             console.log(paymentIntent);
             setTransactionID(paymentIntent.id)
             setSuccess('Your payment is completed')
-            //payment info
             const payment = {
                 order: _id,
                 transactionId: paymentIntent.id
@@ -79,7 +77,6 @@ const CheckoutForm = ({ order }) => {
                 },
                 body: JSON.stringify(payment),
             }).then(res => res.json().then(data => {
-                console.log(data);
                 setProcessing(false)
             }))
         }

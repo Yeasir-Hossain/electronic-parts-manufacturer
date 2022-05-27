@@ -7,9 +7,9 @@ import DeleteOrderModal from './DeleteOrderModal';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([])
-    const [deletingProduct,setDeletingProduct] = useState(null)
+    const [deletingProduct, setDeletingProduct] = useState(null)
     const [user] = useAuthState(auth)
-    const {email} = user
+    const { email } = user
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const MyOrders = () => {
             .then(data => {
                 setOrders(data)
             })
-    }, [email,orders, navigate])
+    }, [email, orders, navigate])
     return (
         <div>
             <h1 className='text-2xl'>My orders: {orders.length}</h1>
@@ -56,12 +56,12 @@ const MyOrders = () => {
                                 <td>${o.price}</td>
                                 <td>{o.quantity}</td>
                                 <td>
-                                    {(o.status==='') &&  <Link to={`/dashboard/payment/${o._id}`}> <button className='btn btn-sm btn-success'>Pay</button></Link>}
-                                    {(o.status==='paid') && <span className='text-success'>Pending</span>}
-                                    {(o.status==='ship') && <span className='text-success'>Shipping</span>}
+                                    {(o.status === '') && <Link to={`/dashboard/payment/${o._id}`}> <button className='btn btn-sm btn-success'>Pay</button></Link>}
+                                    {(o.status === 'paid') && <span className='text-success'>Pending</span>}
+                                    {(o.status === 'ship') && <span className='text-success'>Shipping</span>}
                                 </td>
                                 <td>
-                                    {(o.status==='') &&  <label onClick={()=>setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Delete</label>}
+                                    {(o.status === '') && <label onClick={() => setDeletingProduct(o)} for="delete-order-modal" class="btn btn-error btn-sm">Delete</label>}
                                 </td>
                             </tr>)
                         }
@@ -69,8 +69,8 @@ const MyOrders = () => {
                 </table>
             </div>
             {deletingProduct && <DeleteOrderModal
-            deletingProduct={deletingProduct}
-            setDeletingProduct={setDeletingProduct}
+                deletingProduct={deletingProduct}
+                setDeletingProduct={setDeletingProduct}
             >
             </DeleteOrderModal>}
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Productrow = ({ product, index,setDeletingProduct }) => {
-    const { name, img,price,quantity } = product
+const Productrow = ({ product, index, setDeletingProduct }) => {
+    const { name, img, price, quantity } = product
     return (
         <tr>
             <td>{index + 1}</td>
@@ -24,7 +24,7 @@ const Productrow = ({ product, index,setDeletingProduct }) => {
                 {quantity}
             </td>
             <td>
-            <label onClick={()=>setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label>
+                <label onClick={() => setDeletingProduct(product)} for="delete-confirm-modal" class="btn btn-error btn-xs">Delete</label>
             </td>
         </tr>
     );

@@ -23,6 +23,7 @@ import MyOrders from './pages/Dashboard/MyOrders';
 import Payment from './pages/Dashboard/Payment';
 import ManageOrders from './pages/Dashboard/ManageOrders';
 import MyProfile from './pages/Dashboard/MyProfile';
+import Review from './pages/Dashboard/Review';
 
 function App() {
   return (
@@ -42,16 +43,13 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='review' element={<Review></Review>}></Route>
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
           <Route path='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
           <Route path='manageProduct' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           <Route path='manageOrder' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
           </Route>
         <Route path='purchase/:id' element={
-          <RequireAuth>
-            <Purchase></Purchase>
-          </RequireAuth>} />
-        <Route path='purchase' element={
           <RequireAuth>
             <Purchase></Purchase>
           </RequireAuth>} />
