@@ -13,7 +13,7 @@ const ManageOrders = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch(`https://stormy-chamber-96171.herokuapp.com/booking`, {
+        fetch(`https://electronics-lab.onrender.com/booking`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -32,7 +32,7 @@ const ManageOrders = () => {
             })
     }, [email, orders, navigate])
     const handleShipping = id => {
-        fetch(`https://stormy-chamber-96171.herokuapp.com/booking/${id}`, {
+        fetch(`https://electronics-lab.onrender.com/booking/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

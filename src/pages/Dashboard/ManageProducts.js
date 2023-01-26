@@ -8,7 +8,7 @@ import Productrow from './ProductRow';
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null)
     const { isLoading, data: products, refetch } = useQuery(['products'], () =>
-        fetch(`https://stormy-chamber-96171.herokuapp.com/product`, {
+        fetch(`https://electronics-lab.onrender.com/product`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

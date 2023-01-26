@@ -5,7 +5,7 @@ import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, data: products } = useQuery(['product'], () =>
-        fetch(`https://stormy-chamber-96171.herokuapp.com/product`)
+        fetch(`https://electronics-lab.onrender.com/product`)
             .then(res => res.json())
     )
     if(isLoading){

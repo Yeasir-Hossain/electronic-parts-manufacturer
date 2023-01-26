@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 
 const Resource = () => {
     const { isLoading, data: products } = useQuery(['product'], () =>
-        fetch(`https://stormy-chamber-96171.herokuapp.com/product`)
+        fetch(`https://electronics-lab.onrender.com/product`)
             .then(res => res.json())
     )
     if (isLoading) {

@@ -9,7 +9,7 @@ const MyProfile = () => {
     const [updateUser,setUpdateUser] = useState([])
     const { email } = user;
     const { register, handleSubmit, reset } = useForm();
-    fetch(`https://stormy-chamber-96171.herokuapp.com/user/${email}`)
+    fetch(`https://electronics-lab.onrender.com/user/${email}`)
         .then(res => res.json())
         .then(data => {
             setUpdateUser(data)
@@ -24,7 +24,7 @@ const MyProfile = () => {
             linkdein: data?.linkdein
         }
         if (email) {
-            fetch(`https://stormy-chamber-96171.herokuapp.com/user/${email}`, {
+            fetch(`https://electronics-lab.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

@@ -4,7 +4,7 @@ import Loading from '../shared/Loading';
 import UserRow from './UserRow';
 const Users = () => {
     const { isLoading, data: users, refetch } = useQuery(['users'], () =>
-        fetch(`https://stormy-chamber-96171.herokuapp.com/user`, {
+        fetch(`https://electronics-lab.onrender.com/user`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

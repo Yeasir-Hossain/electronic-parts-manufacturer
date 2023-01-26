@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L2JYBLXCe1IOSg90uaxfufF8i7YCfjJVJ3FS
 
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://stormy-chamber-96171.herokuapp.com/booking/${id}`
+    const url = `https://electronics-lab.onrender.com/booking/${id}`
 
     const { data: order, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',

@@ -12,7 +12,7 @@ const AddReview = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        const url = 'https://stormy-chamber-96171.herokuapp.com/reviews';
+        const url = 'https://electronics-lab.onrender.com/reviews';
         fetch(url, {
             method: "POST",
             headers: {

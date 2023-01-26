@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, index, refetch }) => {
     const { email, role } = user;
     const makeadmin = () => {
-        fetch(`https://stormy-chamber-96171.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://electronics-lab.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,7 +24,7 @@ const UserRow = ({ user, index, refetch }) => {
             })
     }
     const removeUser = () => {
-        fetch(`https://stormy-chamber-96171.herokuapp.com/user/${email}`, {
+        fetch(`https://electronics-lab.onrender.com/user/${email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
     const { _id, name, email, price } = order
     useEffect(() => {
-        fetch("https://stormy-chamber-96171.herokuapp.com/create-payment-intent", {
+        fetch("https://electronics-lab.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -68,7 +68,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://stormy-chamber-96171.herokuapp.com/booking/${_id}`, {
+            fetch(`https://electronics-lab.onrender.com/booking/${_id}`, {
                 method: "PATCH",
                 headers: {
                     "content-type": "application/json",
